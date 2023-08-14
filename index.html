@@ -87,7 +87,7 @@
 
     $(".mb-5").on("change", ".form-control", () => {
       $(".form-control").each((input) => {
-        console.log(input);
+        console.log($(".form-control")[input].value);
       })
 
       $("body").css("backgroundColor", `rgb()`);
