@@ -72,7 +72,6 @@
   </div>
   <script src="https://unpkg.com/jquery"></script>
   <script>
-    // Add your code here!
     const randomFontSize = Math.floor(Math.random() * 101);
 
     $("article > img").addClass("image-center");
@@ -85,14 +84,18 @@
 
     $("aside").empty().append($("<p>Sorry for the list.</p>"));
 
-    $(".mb-5").on("change", ".form-control", () => {
-      $(".form-control").each((input) => {
-        console.log($(".form-control")[input].value);
-      })
 
-      $("body").css("backgroundColor", `rgb()`);
+    $(".mb-5").on("change", ".form-control", () => {
+      const rgbValues = [];
+      $(".form-control").each((input) => {
+        rgbValues.push($(".form-control")[input].value)
+      })
+      $("body").css("backgroundColor", `rgb(${rgbValues[0]}, ${rgbValues[1]}, ${rgbValues[2]})`);
     })
 
+    $("img").on("click", () =>{
+      $("img").remove();
+    })
 
   </script>
 </body>
